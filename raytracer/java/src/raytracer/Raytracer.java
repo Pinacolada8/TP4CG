@@ -111,7 +111,7 @@ public class Raytracer {
                 Vector3 aux = new Vector3(light.position.x,light.position.y,light.position.z);
                 aux= raio.P.diff(aux);
                 double distance = aux.norm();
-                raio.u=aux;
+                raio.u=aux.normalized();
 
                 // Verificamos se o raio atinge algum objeto ANTES da fonte de
                 //   luz
@@ -146,13 +146,13 @@ public class Raytracer {
                     //   (na variável shadingColor, ~15 linhas)
 
                     
-                    Vector3 atenuacao = light.color.mult(1/(light.constantAttenuation+(distance*light.linearAttenuation)+(distance*distance*light.quadraticAttenuation)));
-                    Vector3 difusa = pygment.color.mult(material.diffuseCoefficient* Math.max(0, closestIntersection.intersectionNormal.dotProduct(raio.u)));
+                    Vector3 luzAtenuada = light.color.mult(1/(light.constantAttenuation+(distance*light.linearAttenuation)+(distance*distance*light.quadraticAttenuation)));
+                    Vector3 difusa = pygment.color.mult(material.diffuseCoefficient* Math.max(0, closestIntersection.intersectionNormal.dotProduct(raio.u))).cwMult(luzAtenuada);
                     Vector3 meio = (raio.u.add(ray.u)).normalized();
-                    double specular = material.specularCoefficient* Math.max(0, Math.pow(closestIntersection.intersectionNormal.dotProduct(meio),material.specularExponent));
+                    Vector3 especular = luzAtenuada.mult(material.specularCoefficient* Math.max(0, Math.pow(closestIntersection.intersectionNormal.dotProduct(meio),material.specularExponent)));
                     
                     
-                    shadingColor =shadingColor.add(atenuacao).add(difusa).add(specular);
+                    shadingColor = shadingColor.add(difusa).add(especular);
                     
                     
                     
