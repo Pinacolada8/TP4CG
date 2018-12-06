@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/usuario/Projetos/raytracer/java/src/raytracer/io/objects/SphereFactory.java</file>
+            <file>file:/home/usuario/Projetos/raytracer/java/src/raytracer/Main.java</file>
+            <file>file:/home/usuario/Projetos/raytracer/java/src/raytracer/io/objects/ObjectBuilder.java</file>
+            <file>file:/home/usuario/Projetos/raytracer/java/src/raytracer/io/Input.java</file>
+            <file>file:/home/usuario/Projetos/raytracer/java/src/raytracer/scene/Camera.java</file>
+            <file>file:/home/usuario/Projetos/raytracer/java/src/raytracer/scene/objects/Sphere.java</file>
+            <file>file:/home/usuario/Projetos/raytracer/java/src/raytracer/scene/objects/Object.java</file>
+            <file>file:/home/usuario/Projetos/raytracer/java/src/raytracer/Raytracer.java</file>
+        </group>
+    </open-files>
+</project-private>
